@@ -52,7 +52,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header currentPage={page} onNavigate={navigate} />
+      <Header onNavigate={navigate} />
 
       <main className="flex-1">
         {page === 'home' && <HomePage onNavigate={navigate} onBookTour={bookTour} onBookStay={bookStay} />}
@@ -63,7 +63,7 @@ export default function App() {
         {page === 'contact' && <ContactPage />}
       </main>
 
-      <Footer onNavigate={navigate} />
+      <Footer currentPage={page} onNavigate={navigate} />
 
       <BookingModal
         open={booking.open}
